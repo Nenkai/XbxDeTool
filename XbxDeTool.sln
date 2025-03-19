@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35716.79 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XbxDeTool", "XbxDeTool\XbxDeTool.csproj", "{C93782FF-53D1-4A26-A7C4-6FA86B2A2B3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C93782FF-53D1-4A26-A7C4-6FA86B2A2B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C93782FF-53D1-4A26-A7C4-6FA86B2A2B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C93782FF-53D1-4A26-A7C4-6FA86B2A2B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C93782FF-53D1-4A26-A7C4-6FA86B2A2B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AD8C93B-DD15-4946-A87A-4850753BD224}
+	EndGlobalSection
+EndGlobal
