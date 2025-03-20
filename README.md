@@ -4,6 +4,8 @@ Xenoblade Chronicles X: Definitive Edition ARD/ARH2 Extractor.
 
 ## Usage
 
+Download the latest version from [Releases](https://github.com/Nenkai/XbxDeTool/releases).
+
 * Extract all files in the archive: `extract-all -i <path to .arh> [-o output dir]`
 * Extract a known file in the archive: `extract-file -i <path to .arh> -f <game path> [-o output dir]`
 * Extract a file by hash in the archive: `extract-hash -i <path to .arh> -h <16 character hash> [-o output dir]`
