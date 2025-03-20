@@ -39,6 +39,11 @@ File offsets are calculated during file system initialization by accumulating di
 
 .NET 9.0 SDK, Visual Studio 2022.
 
+## Credits
+
+* [roccodev](https://github.com/roccodev) - Research, hashes
+* [ScanMountGoat](https://github.com/ScanMountGoat) - hashes
+
 ## License
 
 MIT License.
