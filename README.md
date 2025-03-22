@@ -11,6 +11,9 @@ Download the latest version from [Releases](https://github.com/Nenkai/XbxDeTool/
 * Extract a file by hash in the archive: `XbxDeTool.exe extract-hash -i <path to .arh> -h <16 character hash> [-o output dir]`
 * List all known hashes in the archive: `XbxDeTool.exe hash-list -i <path to .arh>`
 
+> [!NOTE]  
+> Arguments wrapped in `<>` are required and `[]` are optional.
+
 ## Research Notes
 
 Unlike previous Xenoblade games, Monolith has transitioned to a hashed file system - no paths are present. Paths have to be found manually.
