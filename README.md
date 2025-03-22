@@ -17,11 +17,6 @@ Unlike previous Xenoblade games, Monolith has transitioned to a hashed file syst
 
 Currently, `92732` out of `104824` hashes are known (88.46%) for 1.0.1. Please contribute!
 
-* [x] Used XBX file lists as a base, remapped `.ca` extensions to `.wi`
-* [x] [strings2](https://github.com/glmcdona/strings2)'d over the entire game contents for extra paths
-* [ ] Remap `/menu` paths to `/ui/..` as that folder has moved
-* [ ] Log files at runtime, from start to full game completion
-
 Additionally, the file system has been dumbed down compared to XB3. The header is essentially a list of:
 
 ```c
