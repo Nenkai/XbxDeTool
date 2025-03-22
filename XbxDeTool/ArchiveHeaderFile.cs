@@ -12,6 +12,11 @@ namespace XbxDeTool;
 
 public class ArchiveHeaderFile
 {
+    /// <summary>
+    /// 'arh2'
+    /// </summary>
+    public const uint MAGIC = 0x32687261;
+
     public Dictionary<ulong, ArchiveFileInfo> Files { get; set; } = [];
 
     public static ArchiveHeaderFile Open(string file)
@@ -26,6 +31,9 @@ public class ArchiveHeaderFile
 
         BinaryStream bs = new BinaryStream(stream);
         uint magic = bs.ReadUInt32();
+        if (magic != MAGIC)
+            throw new InvalidDataException("Stream is not a arh2, magic did not match.");
+
         uint numFiles = bs.ReadUInt32();
         uint fileAlignment = bs.ReadUInt32();
         bs.Position += 4;

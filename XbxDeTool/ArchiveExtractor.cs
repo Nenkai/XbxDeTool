@@ -5,6 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 using Microsoft.Extensions.Logging;
 
@@ -15,7 +16,6 @@ using ImpromptuNinjas.ZStd;
 using Syroot.BinaryData;
 
 using XbxDeTool.Hashing;
-using System.IO;
 
 namespace XbxDeTool;
 
@@ -95,7 +95,17 @@ public class ArchiveExtractor : IDisposable
 
     private void InitFileLists()
     {
-        foreach (var file in Directory.GetFiles("Filelists"))
+        string exePath = GetCurrentExecutingPath();
+        string currentDir = Path.GetDirectoryName(exePath)!;
+        string fileListDir = Path.Combine(currentDir, "Filelists");
+
+        if (!Directory.Exists(fileListDir))
+        {
+            _logger?.LogWarning("Filelists directory is missing next to the executable.");
+            return;
+        }
+
+        foreach (var file in Directory.GetFiles(fileListDir))
         {
             if (Path.GetFileName(file) == "hash_list.txt")
             {
@@ -112,8 +122,6 @@ public class ArchiveExtractor : IDisposable
                 TryRegisterPath(line);
             }
         }
-
-
     }
 
     private void TryRegisterPath(string line)
@@ -279,6 +287,15 @@ public class ArchiveExtractor : IDisposable
 
             remSize -= chunkSize;
         }
+    }
+
+    private static string GetCurrentExecutingPath()
+    {
+        string assemblyLocation = Assembly.GetExecutingAssembly().Location;
+        if (string.IsNullOrEmpty(assemblyLocation)) // This may be empty if we compiled the executable as single-file.
+            assemblyLocation = Environment.GetCommandLineArgs()[0]!;
+
+        return assemblyLocation;
     }
 
     public void Dispose()

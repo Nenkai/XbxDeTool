@@ -103,8 +103,16 @@ public class Program
         string outputDir;
         if (outputDirInfo is not null)
             outputDir = outputDirInfo.FullName;
-        else
+        else if (inputFile.DirectoryName is not null)
             outputDir = Path.Combine(inputFile.DirectoryName, "extracted")!;
+        else
+            outputDir = "extracted";
+
+        if (inputFile.FullName.EndsWith(".ard"))
+        {
+            _logger.LogError("Point to the .arh file, not the .ard file.");
+            return;
+        }
 
         using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, _loggerFactory);
         if (archiveExtractor is null)
@@ -115,7 +123,7 @@ public class Program
 
         archiveExtractor.ExtractAll(outputDir);
 
-        _logger.LogInformation("Done.");
+        _logger.LogInformation("Done, extracted at '{outputDir}'", outputDir);
     }
 
     private static void UnpackFile(FileInfo inputFile, string gamePath, FileInfo? outputDirInfo)
@@ -123,8 +131,16 @@ public class Program
         string outputDir;
         if (outputDirInfo is not null)
             outputDir = outputDirInfo.FullName;
-        else
+        else if (inputFile.DirectoryName is not null)
             outputDir = Path.Combine(inputFile.DirectoryName, "extracted")!;
+        else
+            outputDir = "extracted";
+
+        if (inputFile.FullName.EndsWith(".ard"))
+        {
+            _logger.LogError("Point to the .arh file, not the .ard file.");
+            return;
+        }
 
         using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, _loggerFactory);
         if (archiveExtractor is null)
@@ -140,7 +156,7 @@ public class Program
             return;
         }
 
-        _logger.LogInformation("File extracted.");
+        _logger.LogInformation("File extracted at {path}", Path.GetFullPath(outputFile));
     }
 
     private static void UnpackHash(FileInfo inputFile, string hashStr, FileInfo? outputDirInfo)
@@ -148,8 +164,16 @@ public class Program
         string outputDir;
         if (outputDirInfo is not null)
             outputDir = outputDirInfo.FullName;
-        else
+        else if (inputFile.DirectoryName is not null)
             outputDir = Path.Combine(inputFile.DirectoryName, "extracted")!;
+        else
+            outputDir = "extracted";
+
+        if (inputFile.FullName.EndsWith(".ard"))
+        {
+            _logger.LogError("Point to the .arh file, not the .ard file.");
+            return;
+        }
 
         using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, _loggerFactory);
         if (archiveExtractor is null)
@@ -180,7 +204,7 @@ public class Program
             return;
         }
 
-        _logger.LogInformation("File extracted.");
+        _logger.LogInformation("File extracted at '{outputFile}'.", Path.GetFullPath(outputFile));
     }
 
     private static void HashList(FileInfo inputFile)
@@ -192,9 +216,14 @@ public class Program
             return;
         }
 
-        string output = Path.Combine(Path.GetDirectoryName(inputFile.FullName), "hash_list.txt");
+        string output;
+        if (inputFile.DirectoryName is not null)
+            output = Path.Combine(inputFile.DirectoryName, "hash_list.txt");
+        else
+            output = Path.Combine("hash_list.txt");
+
         archiveExtractor.CreateHashList(output);
 
-        _logger.LogInformation("Hash list exported at {path}.", output);
+        _logger.LogInformation("Hash list exported at {path}.", Path.GetFullPath(output));
     }
 }
