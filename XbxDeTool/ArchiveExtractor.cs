@@ -112,6 +112,8 @@ public class ArchiveExtractor : IDisposable
                 TryRegisterPath(line);
             }
         }
+
+
     }
 
     private void TryRegisterPath(string line)
