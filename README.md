@@ -18,7 +18,7 @@ Download the latest version from [Releases](https://github.com/Nenkai/XbxDeTool/
 
 Unlike previous Xenoblade games, Monolith has transitioned to a hashed file system - no paths are present. Paths have to be found manually.
 
-Currently, `92732` out of `104824` hashes are known (88.46%) for 1.0.1. Please contribute!
+Currently, `100612` out of `104824` hashes are known (95.98%) for 1.0.1. Please contribute!
 
 Additionally, the file system has been dumbed down compared to XB3. The header is essentially a list of:
 
