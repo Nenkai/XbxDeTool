@@ -124,6 +124,8 @@ public class ArchiveExtractor : IDisposable
         }
     }
 
+    private static string[] _locales = new string[] { "us", "jp", "cn", "fr", "sp", "ge", "tw", "kr" };
+
     private void TryRegisterPath(string line)
     {
         string normalizedStr = line.Replace('\\', '/').ToLower();
@@ -162,6 +164,21 @@ public class ArchiveExtractor : IDisposable
 
             if (_headerFile.Files.ContainsKey(hash))
                 _knownPaths.TryAdd(hash, normalizedStr);
+        }
+
+        foreach (var currentLocale in _locales)
+        {
+            if (normalizedStr.Contains(currentLocale))
+            {
+                foreach (var targetLocale in _locales)
+                {
+                    string wiPath = normalizedStr.Replace(currentLocale, targetLocale);
+                    hash = XxHash64.HashPath(wiPath);
+
+                    if (_headerFile.Files.ContainsKey(hash))
+                        _knownPaths.TryAdd(hash, normalizedStr);
+                }
+            }
         }
     }
 
