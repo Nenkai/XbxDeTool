@@ -154,7 +154,7 @@ public class ArchiveExtractor : IDisposable
             hash = XxHash64.HashPath(wiPath);
 
             if (_headerFile.Files.ContainsKey(hash))
-                _knownPaths.TryAdd(hash, normalizedStr);
+                _knownPaths.TryAdd(hash, wiPath);
         }
 
         if (normalizedStr.StartsWith("/00") && normalizedStr.Length > 5)
@@ -163,7 +163,7 @@ public class ArchiveExtractor : IDisposable
             hash = XxHash64.HashPath(normStr2);
 
             if (_headerFile.Files.ContainsKey(hash))
-                _knownPaths.TryAdd(hash, normalizedStr);
+                _knownPaths.TryAdd(hash, normStr2);
         }
 
         foreach (var currentLocale in _locales)
@@ -172,11 +172,11 @@ public class ArchiveExtractor : IDisposable
             {
                 foreach (var targetLocale in _locales)
                 {
-                    string wiPath = normalizedStr.Replace(currentLocale, targetLocale);
-                    hash = XxHash64.HashPath(wiPath);
+                    string localePath = normalizedStr.Replace(currentLocale, targetLocale);
+                    hash = XxHash64.HashPath(localePath);
 
                     if (_headerFile.Files.ContainsKey(hash))
-                        _knownPaths.TryAdd(hash, normalizedStr);
+                        _knownPaths.TryAdd(hash, localePath);
                 }
             }
         }
