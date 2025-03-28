@@ -20,7 +20,7 @@ public class Program
     private static ILoggerFactory _loggerFactory;
     private static Microsoft.Extensions.Logging.ILogger _logger;
 
-    public const string Version = "1.0.5";
+    public const string Version = "1.0.6";
 
     static async Task<int> Main(string[] args)
     {
