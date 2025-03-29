@@ -27,6 +27,8 @@ public class ArchiveExtractor : IDisposable
     private ArchiveHeaderFile _headerFile;
     private BinaryStream _dataStream;
 
+    private ArchiveExtractorOptions _options;
+
     private Dictionary<ulong, string> _knownPaths = [];
     static Dictionary<string, string> _startPatterns = new()
     {
@@ -48,18 +50,20 @@ public class ArchiveExtractor : IDisposable
         ["/chr_ws/"] = "/chr/ws/",
     };
 
-    private ArchiveExtractor(ILoggerFactory? loggerFactory = null)
+    private ArchiveExtractor(ArchiveExtractorOptions options = null, ILoggerFactory? loggerFactory = null)
     {
+        _options = options ?? new ArchiveExtractorOptions();
+
         _loggerFactory = loggerFactory;
         if (loggerFactory is not null)
             _logger = loggerFactory.CreateLogger(GetType().ToString());
     }
 
-    public static ArchiveExtractor? Init(string arhFilePath, ILoggerFactory? loggerFactory = null)
+    public static ArchiveExtractor? Init(string arhFilePath, ArchiveExtractorOptions options = null, ILoggerFactory? loggerFactory = null)
     {
         ArgumentException.ThrowIfNullOrEmpty(arhFilePath, nameof(arhFilePath));
 
-        var extractor = new ArchiveExtractor(loggerFactory);
+        var extractor = new ArchiveExtractor(options, loggerFactory);
         if (!extractor.Open(arhFilePath))
             return null;
 
@@ -124,7 +128,7 @@ public class ArchiveExtractor : IDisposable
         }
     }
 
-    private static string[] _locales = new string[] { "us", "jp", "cn", "fr", "sp", "ge", "tw", "kr" };
+    private static string[] _locales = ["us", "jp", "cn", "fr", "sp", "ge", "tw", "kr"];
 
     private void TryRegisterPath(string line)
     {
@@ -250,7 +254,7 @@ public class ArchiveExtractor : IDisposable
         using var outputStream = File.Create(outputPath);
 
         uint magic = _dataStream.ReadUInt32();
-        if (magic == 0x31636278)
+        if (archiveFile.IsCompressed || (magic == 0x31636278 && _options.ExtractAllExternalXbcs))
         {
             HandleXbcHeader(_dataStream, outputStream, archiveFile);
         }

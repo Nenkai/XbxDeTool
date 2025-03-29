@@ -46,13 +46,17 @@ public class Program
         var outputOption = new Option<FileInfo?>(
             aliases: ["--output", "-o"],
             description: "Output directory.");
+        var noExtractXbc = new Option<bool>(
+            aliases: ["--no-extract-xbc"],
+            description: "Whether not to auto-extract files wrapped in a Xbc1 container.");
 
         var extractAllCommand = new Command("extract-all", "Extracts all files from a .arh/ard archive.")
         {
             inputOption,
             outputOption,
+            noExtractXbc,
         };
-        extractAllCommand.SetHandler(UnpackAll, inputOption, outputOption);
+        extractAllCommand.SetHandler(UnpackAll, inputOption, outputOption, noExtractXbc);
 
         var gameFileOption = new Option<string>(
             aliases: ["--file", "-f"],
@@ -66,8 +70,9 @@ public class Program
             inputOption,
             gameFileOption,
             outputOption,
+            noExtractXbc,
         };
-        extractFileCommand.SetHandler(UnpackFile, inputOption, gameFileOption, outputOption);
+        extractFileCommand.SetHandler(UnpackFile, inputOption, gameFileOption, outputOption, noExtractXbc);
 
         var hashOption = new Option<string>(
             aliases: ["--hash", "-h"],
@@ -80,8 +85,9 @@ public class Program
             inputOption,
             hashOption,
             outputOption,
+            noExtractXbc,
         };
-        extractHashCommand.SetHandler(UnpackHash, inputOption, hashOption, outputOption);
+        extractHashCommand.SetHandler(UnpackHash, inputOption, hashOption, outputOption, noExtractXbc); 
 
         var hashListCommand = new Command("hash-list", "Produces a hash list with known paths from the ard/arh archive.")
         {
@@ -98,7 +104,7 @@ public class Program
         return await rootCommand.InvokeAsync(args);
     }
 
-    private static void UnpackAll(FileInfo inputFile, FileInfo? outputDirInfo)
+    private static void UnpackAll(FileInfo inputFile, FileInfo? outputDirInfo, bool noExtractXbc)
     {
         string outputDir;
         if (outputDirInfo is not null)
@@ -114,7 +120,11 @@ public class Program
             return;
         }
 
-        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, _loggerFactory);
+        var options = new ArchiveExtractorOptions()
+        {
+            ExtractAllExternalXbcs = !noExtractXbc,
+        };
+        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, options, _loggerFactory);
         if (archiveExtractor is null)
         {
             _logger.LogError("Failed to open arh/ard files.");
@@ -126,7 +136,7 @@ public class Program
         _logger.LogInformation("Done, extracted at '{outputDir}'", outputDir);
     }
 
-    private static void UnpackFile(FileInfo inputFile, string gamePath, FileInfo? outputDirInfo)
+    private static void UnpackFile(FileInfo inputFile, string gamePath, FileInfo? outputDirInfo, bool noExtractXbc)
     {
         string outputDir;
         if (outputDirInfo is not null)
@@ -142,7 +152,11 @@ public class Program
             return;
         }
 
-        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, _loggerFactory);
+        var options = new ArchiveExtractorOptions()
+        {
+            ExtractAllExternalXbcs = !noExtractXbc,
+        };
+        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, options, _loggerFactory);
         if (archiveExtractor is null)
         {
             _logger.LogError("Failed to open arh/ard files.");
@@ -159,7 +173,7 @@ public class Program
         _logger.LogInformation("File extracted at {path}", Path.GetFullPath(outputFile));
     }
 
-    private static void UnpackHash(FileInfo inputFile, string hashStr, FileInfo? outputDirInfo)
+    private static void UnpackHash(FileInfo inputFile, string hashStr, FileInfo? outputDirInfo, bool noExtractXbc)
     {
         string outputDir;
         if (outputDirInfo is not null)
@@ -175,7 +189,11 @@ public class Program
             return;
         }
 
-        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, _loggerFactory);
+        var options = new ArchiveExtractorOptions()
+        {
+            ExtractAllExternalXbcs = !noExtractXbc,
+        };
+        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, options, _loggerFactory);
         if (archiveExtractor is null)
         {
             _logger.LogError("Failed to open arh/ard files.");
@@ -209,7 +227,7 @@ public class Program
 
     private static void HashList(FileInfo inputFile)
     {
-        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, _loggerFactory);
+        using var archiveExtractor = ArchiveExtractor.Init(inputFile.FullName, loggerFactory: _loggerFactory);
         if (archiveExtractor is null)
         {
             _logger.LogError("Failed to open arh/ard files.");
