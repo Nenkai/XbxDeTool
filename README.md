@@ -10,9 +10,12 @@ Download the latest version from [Releases](https://github.com/Nenkai/XbxDeTool/
 * Extract a known file in the archive: `XbxDeTool.exe extract-file -i <path to .arh> -f <game path> [-o output dir]`
 * Extract a file by hash in the archive: `XbxDeTool.exe extract-hash -i <path to .arh> -h <16 character hash> [-o output dir]`
 * List all known hashes in the archive: `XbxDeTool.exe hash-list -i <path to .arh>`
+* Decompress file wrapped in Xbc1 layer: `XbxDeTool.exe extract-xbc -i <path to file>`
 
 > [!NOTE]  
 > Arguments wrapped in `<>` are required and `[]` are optional.
+>
+> When extracting files, files that are externally compressed with a `Xbc1` header are also automatically decompressed to keep all assets in a consistent state. Use the `--no-extract-xbc` to override this behavior. (Technically the game supports loading raw files aswell, it just checks if the `Xbc1` magic exists).
 
 ## Research Notes
 
