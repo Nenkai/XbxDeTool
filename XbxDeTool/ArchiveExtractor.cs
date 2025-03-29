@@ -11,11 +11,10 @@ using Microsoft.Extensions.Logging;
 
 using CommunityToolkit.HighPerformance.Buffers;
 
-using ImpromptuNinjas.ZStd;
-
 using Syroot.BinaryData;
 
 using XbxDeTool.Hashing;
+using XbxDeTool.Compression;
 
 namespace XbxDeTool;
 
@@ -94,12 +93,15 @@ public class ArchiveExtractor : IDisposable
             (float)_knownPaths.Count / _headerFile.Files.Count * 100.0f);
         _logger?.LogInformation("ARD2 ready.");
 
+        if (_options.ExtractAllExternalXbcs)
+            _logger?.LogWarning("Not decompressing all files compressed externally (Xbc1 layer). Some files may remain compressed.");
+
         return true;
     }
 
     private void InitFileLists()
     {
-        string exePath = GetCurrentExecutingPath();
+        string exePath = Utils.GetCurrentExecutingPath();
         string currentDir = Path.GetDirectoryName(exePath)!;
         string fileListDir = Path.Combine(currentDir, "Filelists");
 
@@ -254,79 +256,21 @@ public class ArchiveExtractor : IDisposable
         using var outputStream = File.Create(outputPath);
 
         uint magic = _dataStream.ReadUInt32();
-        if (archiveFile.IsCompressed || (magic == 0x31636278 && _options.ExtractAllExternalXbcs))
+        _dataStream.Position -= 4;
+
+        if (archiveFile.IsCompressed || (magic == Xbc1.MAGIC && _options.ExtractAllExternalXbcs))
         {
-            HandleXbcHeader(_dataStream, outputStream, archiveFile);
+            Xbc1.Decompress(_dataStream, archiveFile.Offset, outputStream, 
+                archiveFile.IsCompressed ? archiveFile.ExpandedSize : null);
         }
         else
         {
-            _dataStream.Position -= 4;
-            CopyStream(_dataStream, outputStream, archiveFile.DiskSize);
+            Utils.CopyStreamRange(_dataStream, outputStream, archiveFile.DiskSize);
         }
-    }
-
-    private static void HandleXbcHeader(BinaryStream inputStream, Stream outputStream, ArchiveFileInfo file)
-    {
-        const int Xbc1HeaderSize = 0x30;
-
-        XbcCompressionType compressionType = (XbcCompressionType)inputStream.ReadUInt32();
-        uint decompressedSize = inputStream.ReadUInt32();
-        uint compresserdSize = inputStream.ReadUInt32();
-        uint crc = inputStream.ReadUInt32();
-        // TODO: name
-
-        if (file.IsCompressed)
-            Debug.Assert(decompressedSize == file.ExpandedSize);
-
-        inputStream.Position = file.Offset + Xbc1HeaderSize;
-
-
-        Stream compressionStream = compressionType switch
-        {
-            XbcCompressionType.Zlib => new ZLibStream(inputStream, CompressionMode.Decompress),
-            XbcCompressionType.ZStd => new ZStdDecompressStream(inputStream),
-            _ => throw new NotSupportedException($"Compression type {compressionType} is not supported."),
-        };
-
-        CopyStream(compressionStream, outputStream, decompressedSize);
-    }
-
-    private static void CopyStream(Stream inputStream, Stream outputStream, uint length)
-    {
-        const int BufferSize = 0x40000;
-
-        long remSize = length;
-        using MemoryOwner<byte> outBuffer = MemoryOwner<byte>.Allocate(BufferSize);
-
-        while (remSize > 0)
-        {
-            int chunkSize = (int)Math.Min(remSize, BufferSize);
-            Span<byte> chunk = outBuffer.Span.Slice(0, chunkSize);
-
-            inputStream.ReadExactly(chunk);
-            outputStream.Write(chunk);
-
-            remSize -= chunkSize;
-        }
-    }
-
-    private static string GetCurrentExecutingPath()
-    {
-        string assemblyLocation = Assembly.GetExecutingAssembly().Location;
-        if (string.IsNullOrEmpty(assemblyLocation)) // This may be empty if we compiled the executable as single-file.
-            assemblyLocation = Environment.GetCommandLineArgs()[0]!;
-
-        return assemblyLocation;
     }
 
     public void Dispose()
     {
         ((IDisposable)_dataStream).Dispose();
-    }
-
-    public enum XbcCompressionType
-    {
-        Zlib = 1,
-        ZStd = 3,
     }
 }

@@ -12,6 +12,7 @@ using ImpromptuNinjas.ZStd;
 
 using NLog;
 using NLog.Extensions.Logging;
+using XbxDeTool.Compression;
 
 namespace XbxDeTool;
 
@@ -92,14 +93,20 @@ public class Program
         var hashListCommand = new Command("hash-list", "Produces a hash list with known paths from the ard/arh archive.")
         {
             inputOption,
-            outputOption,
         };
         hashListCommand.SetHandler(HashList, inputOption);
+
+        var extractXbc = new Command("extract-xbc", "Extract files wrapped in a Xbc1 header/layer.")
+        {
+            inputOption,
+        };
+        extractXbc.SetHandler(ExtractXbc1, inputOption);
 
         rootCommand.AddCommand(extractAllCommand);
         rootCommand.AddCommand(extractFileCommand);
         rootCommand.AddCommand(extractHashCommand);
         rootCommand.AddCommand(hashListCommand);
+        rootCommand.AddCommand(extractXbc);
 
         return await rootCommand.InvokeAsync(args);
     }
@@ -223,6 +230,18 @@ public class Program
         }
 
         _logger.LogInformation("File extracted at '{outputFile}'.", Path.GetFullPath(outputFile));
+    }
+
+    private static void ExtractXbc1(FileInfo inputFile)
+    {
+        string outputPath = inputFile.FullName + ".dec";
+
+        using var inputStream = File.OpenRead(inputFile.FullName);
+        using var outputStream = File.Create(outputPath);
+
+        Xbc1.Decompress(inputStream, 0, outputStream);
+
+        _logger.LogInformation("File extracted at {path}", Path.GetFullPath(outputPath));
     }
 
     private static void HashList(FileInfo inputFile)
