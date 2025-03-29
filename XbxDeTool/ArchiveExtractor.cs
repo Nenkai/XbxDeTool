@@ -93,7 +93,7 @@ public class ArchiveExtractor : IDisposable
             (float)_knownPaths.Count / _headerFile.Files.Count * 100.0f);
         _logger?.LogInformation("ARD2 ready.");
 
-        if (_options.ExtractAllExternalXbcs)
+        if (!_options.ExtractAllExternalXbcs)
             _logger?.LogWarning("Not decompressing all files compressed externally (Xbc1 layer). Some files may remain compressed.");
 
         return true;
