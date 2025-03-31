@@ -258,7 +258,9 @@ public class ArchiveExtractor : IDisposable
         uint magic = _dataStream.ReadUInt32();
         _dataStream.Position -= 4;
 
-        if (archiveFile.IsCompressed || (magic == Xbc1.MAGIC && _options.ExtractAllExternalXbcs))
+        // We excluded smda (Section (?) Map DAta) from auto xbc extraction as they actually contain multiple chunks.
+        // These xbc chunks are pointed to from smhd (Section (?) Map HeaDer), which contains offsets to chunks.
+        if (archiveFile.IsCompressed || (magic == Xbc1.MAGIC && _options.ExtractAllExternalXbcs && !outputPath.EndsWith(".wismda")))
         {
             Xbc1.Decompress(_dataStream, archiveFile.Offset, outputStream, 
                 archiveFile.IsCompressed ? archiveFile.ExpandedSize : null);
