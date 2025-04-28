@@ -40,12 +40,14 @@ public class Xbc1
 
         Stream compressionStream = compressionType switch
         {
-            XbcCompressionType.Zlib => new ZLibStream(inputStream, CompressionMode.Decompress),
-            XbcCompressionType.ZStd => new ZStdDecompressStream(inputStream),
+            XbcCompressionType.Zlib => new ZLibStream(inputStream, CompressionMode.Decompress, leaveOpen: true),
+            XbcCompressionType.ZStd => new ZStdDecompressStream(inputStream, leaveOpen: true),
             _ => throw new NotSupportedException($"Compression type {compressionType} is not supported."),
         };
 
         Utils.CopyStreamRange(compressionStream, outputStream, decompressedSize);
+
+        compressionStream.Dispose();
     }
 }
 

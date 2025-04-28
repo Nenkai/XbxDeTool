@@ -11,7 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.4.0" />
-    <PackageReference Include="ImpromptuNinjas.ZStd" Version="1.4.5.5" />
     <PackageReference Include="Syroot.BinaryData" Version="5.2.2" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
     <PackageReference Include="System.IO.Hashing" Version="9.0.3" />
@@ -19,6 +18,10 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0" />
 	<PackageReference Include="NLog" Version="5.3.4" />
 	<PackageReference Include="NLog.Extensions.Logging" Version="5.3.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ZStd\ImpromptuNinjas.ZStd\ImpromptuNinjas.ZStd.csproj" />
   </ItemGroup>
 
   <ItemGroup>
