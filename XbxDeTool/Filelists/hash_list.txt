@@ -3088,7 +3088,7 @@ D5320E1B9AFF0528|/bdat/cn/qev086705_ms.bdat
 EF06C943FC278A04|/bdat/cn/xs05040100_ms.bdat
 F17DD9E9CEE157E0|/chr/cmntex/8e/8e0f3b8e_m.wismt
 FB1FD93EFBD4B1B3|/chr/en/voice_en010301a.ces
-A269B4772EF9AECF|
+A269B4772EF9AECF|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c08_kee001_ev_cmn_500_020_pcefb.eva
 2290012F12B49608|/chr/cmntex/d6/d6ec4f90_m.wismt
 1BD0E941E6B7D731|/chr/cmntex/48/482cb8c4_h.wismt
 9EBA35BD111F0F89|/bdat/jp/qev087503_ms.bdat
@@ -5424,7 +5424,7 @@ D20ADD62476CD730|/chr/cmntex/42/42cf0eb6_m.wismt
 E78D55B83C6E240C|/chr/cmntex/0d/0dd43aa3_h.wismt
 23B69698DC259DB2|/bdat/cn/qev050504_ms.bdat
 8D5B755CEB189DDC|/chr/cmntex/4d/4d384263_h.wismt
-E65D9BF623776B62|
+E65D9BF623776B62|/ev/motion/ptcs/xs00010100/xs00010100_c03_evr_oj010006.anm
 D43D0BFF2BE4A621|/bdat/cn/tev000291_ms.bdat
 35AE91687B270CDD|/chr/fctex/fc211002_a01010402.witex
 00AED943D3563266|/ev/motion/np/pc282000/509016m_sp_14_anm.anm
@@ -39726,7 +39726,7 @@ C7B3CDCD9FA090C0|/chr/cmntex/06/06963a4b_h.wismt
 5E981B0B43A437FD|/chr/cmntex/3f/3fab568d_m.wismt
 6D837A094C60BF87|/chr/cmntex/06/06a1a836_h.wismt
 A63689A48B0DCA5F|/chr/cmntex/62/621d22e6_h.wismt
-6C0CC6F449184249|
+6C0CC6F449184249|/ev/motion/en/en010301/509008m_sp_7_anm.anm
 76B52982401B2B16|/chr/cmntex/06/06a5b156_h.wismt
 A37845ED6E2626C2|/chr/cmntex/93/930d3ebe_m.wismt
 F50445A3675D6A1E|/chr/cmntex/06/06a5b156_m.wismt
@@ -43299,7 +43299,7 @@ E237C1C64C13AB05|/chr/cmntex/18/18e4b0b8_h.wismt
 404BFCC632BEEBC4|/chr/cmntex/18/18ee2b32_h.wismt
 25B59B8317645FD7|/chr/fc/fc123001.wismt
 6844CBCD400A6831|/chr/cmntex/18/18eeb6d0_m.wismt
-31523200296CBAF7|
+31523200296CBAF7|/chr/oj/qsten011104.ces
 8C1A9766009089FB|/chr/cmntex/18/18f6c3ea_h.wismt
 6A0643099581D7DC|/ui/stream/ge/strm_tips_101_01.wilay
 DF21B58461944134|/chr/wd/wd0230016r.wismt
@@ -44518,7 +44518,7 @@ B88E8E43D573EE93|/ev/motion/ptcs/xs11080100_2/xs11080100_2_c02_evr9_oj490014.anm
 E978DE3EB2732B68|/chr/cmntex/1f/1f5eeca3_m.wismt
 A8706C3E37A2547A|/chr/cmntex/5f/5f1d77e9_h.wismt
 F59BA22A1F9BC57A|/chr/cmntex/1f/1f63d1ec_h.wismt
-C4C6920E1D23DCF1|
+C4C6920E1D23DCF1|/ev/title/title2_c01_evr25_oj490036.anm
 724E5D44658F5F2D|/eff/efb/btl/wd/effpack_wd_034501.wiepac
 26978ACC33C56B7D|/chr/cmntex/47/47b49062_m.wismt
 269785A932D8374B|/chr/cmntex/1f/1f63d1ec_m.wismt
@@ -46028,7 +46028,7 @@ FA21AEFF137A6E4F|/chr/cmntex/c1/c10cddb9_h.wismt
 426934E485EF7FD5|/chr/cmntex/28/2825e6a7_h.wismt
 17309E747D326AA7|/chr/wd/wd0231016r.wimdo
 61811D1E5E3BCC95|/chr/cmntex/28/2825e6a7_m.wismt
-FC6ADC510628AFE7|
+FC6ADC510628AFE7|/ev/motion/ptcs/xs08110100_1/xs08110100_1_c12_evr_oj210004.anm
 DF85555C59627502|/chr/cmntex/52/5286b5d7_m.wismt
 40CD43A5557E5A51|/chr/cmntex/81/816ba396_h.wismt
 2342487ABEC6EAB4|/chr/cmntex/28/282f5248_m.wismt
@@ -60002,7 +60002,7 @@ AED3A0F5B9F5EA7E|/chr/wd/wd2014016r.wimtp
 C842E35C8083877F|/chr/cmntex/89/897a7f0b_h.wismt
 E6AF4615FE4B4B49|/chr/cmntex/89/897a7f0b_m.wismt
 AA43400D18F82257|/ui/image/icon_zone.wilay
-4DA38A2803B012CC|
+4DA38A2803B012CC|/ev/motion/ptcs/xs00010100/xs00010100_c01_cm_xs00010100_c01.eva
 2395767D626BD376|/chr/cmntex/89/897fff15_h.wismt
 6B4126EEF0F8A8BF|/chr/cmntex/89/89838120_h.wismt
 4B9EC9F744E06088|/chr/en/en012002.wimdo
@@ -62175,7 +62175,7 @@ DCA83012FABAFDB8|/chr/cmntex/98/982c85fe_m.wismt
 351942ECFDB1E3AC|/chr/cmntex/98/9830c6f3_h.wismt
 44155DEA62B36006|/chr/fctex/fc231001_b027.witex
 B1EE1365548390AB|/ui/image/minimap04_0814.wilay
-EF123C017C2B6D13|
+EF123C017C2B6D13|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c08_kee002_ev_cmn_500_019_pcefb.eva
 067FB797A108476C|/chr/fctex/fc131002_b025.witex
 878B49E7D5C432F6|/chr/cmntex/98/9830c6f3_m.wismt
 2F0749C3440B8F75|/chr/cmntex/98/9831fc1a_m.wismt
@@ -63683,7 +63683,7 @@ F18E77126EB8A70E|/chr/cmntex/d8/d8dcc9a5_h.wismt
 7104386D1AD79478|/chr/cmntex/a3/a30dce12_h.wismt
 01D5D962C147E83C|/chr/cmntex/a3/a317c0ce_m.wismt
 FE4631A9060E48E9|/chr/fctex/fc131001_a00010202.witex
-10B15AD5FC011561|
+10B15AD5FC011561|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c08_evr1_model_en013101.eva
 4B4A992DCC5F6934|/chr/ws/ws261106r.wimdo
 B23A221B3003AC73|/chr/cmntex/a3/a31d702f_h.wismt
 29F3B230C67E7DF4|/chr/cmntex/e8/e887269f_h.wismt
@@ -69390,7 +69390,7 @@ BD950E970C1C7850|/chr/cmntex/d0/d061878c_h.wismt
 E448D5A35BA6A008|/chr/np/np018401.wimtp
 2FD3BC708D5B8DCA|/chr/cmntex/d0/d0646e73_m.wismt
 1D94AC27E5E51383|/chr/cmntex/d0/d066ed9d_m.wismt
-332D795A7DFE8FFE|
+332D795A7DFE8FFE|/ev/motion/en/en011101/509008m_sp_7_ed_anm.anm
 56629C49150EDEC5|/chr/cmntex/d0/d06a6e07_h.wismt
 7AA814CF8ECA6ED2|/chr/cmntex/d0/d06a6e07_m.wismt
 2A439D5BBCFAFE88|/chr/cmntex/e0/e0d40c98_m.wismt
@@ -69559,7 +69559,7 @@ A8620AF2EC2256C6|/chr/cmntex/d1/d1993b75_m.wismt
 984000C86E2AFE65|/chr/cmntex/d1/d19d736f_m.wismt
 285D558D664909AF|/chr/cmntex/d1/d19fe889_h.wismt
 B71045A735301E67|/chr/fctex/fc111002_a05000100.witex
-0BC3F89E4DAE52B4|
+0BC3F89E4DAE52B4|/ev/motion/ptcs/xs00010100/xs00010100_c01_evr_oj010006.eva
 3A09853723696F2D|/chr/cmntex/d1/d19fe889_m.wismt
 9D03E251002F3DE2|/chr/ws/ws262101r.wimtp
 F1A4FAF620DFC788|/chr/cmntex/d1/d1a3bc48_h.wismt
@@ -76087,7 +76087,7 @@ BDB502C3EF9FF35C|/chr/en/parts_en090501.ces
 D07EA0890ADA726B|/ui/image/02030_expup_base.wilay
 DA13FBF30C582A23|/chr/en/parts_en780203.ces
 5A45646A9F1DEA9C|/chr/en/parts_en_dl719100.ces
-7A5F0F1B565253F1|
+7A5F0F1B565253F1|/chr/en/sound_dl779100.ces
 4FB9193DC118984C|/chr/en/sound_en010301.ces
 D6E2D5F5C6109E15|/ev/scn/qev092705.wievpa
 41CA362332FDFDBB|/chr/en/sound_en010501.ces
@@ -78507,7 +78507,7 @@ A47DD7C4AE88B09D|/chr/fctex/fc211001_a01000203.witex
 F47DA516FA1605BD|/chr/fctex/fc211001_a01000301.witex
 E4D0F267E1FE331A|/chr/fctex/fc211001_a01000304.witex
 D89FC94F2C7A6626|/chr/fctex/fc211001_a01000402.witex
-E8C0D0343964C201|
+E8C0D0343964C201|/ev/motion/ptcs/xs00010100/xs00010100_c01_evr_oj010006.anm
 4EDE4E98BA638AD9|/chr/fctex/fc211001_a01000404.witex
 C028C5DB31CC34D7|/chr/fctex/fc221001_a04020404.witex
 E40BBF29D65A9B34|/chr/fctex/fc211001_a01010202.witex
@@ -85536,13 +85536,13 @@ EB46EBD4BBAEA04E|/chr/oj/oj877002.wismt
 47DC730948491ADE|/chr/oj/oj890001.wimdo
 709D49ED162BE667|
 71EE5908A8D32794|/chr/oj/ojen060505.cea
-2C2A8360DE1D54D5|
+2C2A8360DE1D54D5|/chr/oj/qsten010901.ces
 3641F6EF483BA843|/chr/wd/wd3009012l.wimtp
-B1E1710CC883D0A8|
-C989144CAF3E7908|
-E7ADBD83CD07466E|
-F67285B35A46349D|
-4D53429FF99C315E|
+B1E1710CC883D0A8|/chr/oj/qsten011101.ces
+C989144CAF3E7908|/chr/oj/qsten011108.ces
+E7ADBD83CD07466E|/chr/oj/qsten011305.ces
+F67285B35A46349D|/chr/oj/qsten011501.ces
+4D53429FF99C315E|/chr/oj/qsten011503.ces
 68B99064466837A3|/chr/oj/qstoj840058.ces
 7FCB15690EA44AE8|/chr/oj/sound_oj340501.ces
 EB6016642AA14F24|/chr/oj/sound_oj400101.ces
@@ -97012,7 +97012,7 @@ E22717F76BBA4CA7|/ev/lip/sev/us/q932/qev093202.lip
 642B6ADEE11D4085|/ev/motion/dl/dl080100/509006m_sp_5_walk_ed_anm.anm
 51C92259C9A6DBF3|/ev/motion/dl/dl080100/509008m_sp_7_anm.anm
 587D297F7A6A83C6|/ev/motion/dl/dl080100/509009m_sp_8_2_st_anm.anm
-16A21167142CE849|
+16A21167142CE849|/ev/motion/dl/dl080100/509012m_sp_11_anm.anm
 C0EA65EE063CF211|/ev/motion/dl/dl080100/509014m_sp_13_anm.anm
 32EDD5159D78E478|/ev/motion/dl/dl080100/509015m_sp_14_anm.anm
 F9D98BB8895F7389|/ev/motion/dl/dl080100/509018m_sp_17_anm.anm
@@ -97038,9 +97038,9 @@ FA0BBC3F943FAC5D|/ev/motion/dl/dl779100/qev092805_dl779100_sp101_anm.anm
 32915412DBC066BD|/ev/motion/en/en010501/509000m_sp_1_anm.anm
 B4F7EEEC302B560F|/ev/motion/en/en010501/509002m_sp_3_anm.anm
 B20516617300828B|/ev/motion/en/en010501/509004m_sp_5_anm.anm
-0CA01523AA36BE70|
+0CA01523AA36BE70|/ev/motion/en/en010501/509008m_sp_7_ed_anm.anm
 B171A4F510352EB5|/ev/motion/en/en010601/509000m_sp_1_lp_anm.anm
-FCABB65F78957DDB|
+FCABB65F78957DDB|/ev/motion/en/en010601/509002m_sp_2_lp_anm.anm
 FDDD2583512A0782|/ev/motion/en/en010601/509003m_sp_2_ed_anm.anm
 F2384F29B4993E1C|/ev/motion/en/en010601/509009m_sp_8_c05_va_anm.anm
 548CFE9E3F28078A|/ev/motion/en/en010601/509010m_sp_9_c06_va_anm.anm
@@ -97055,7 +97055,7 @@ D7E3E11C4D3B6924|/ev/motion/en/en010801/509005m_sp_6_anm.anm
 C7BCF8684F00B00E|/ev/motion/en/en011101/509004m_sp_5_anm.anm
 55A4F857ADF1A555|/ev/motion/en/en011101/509005m_sp_6_anm.anm
 CD412C52BCCEA8DC|/ev/motion/en/en011101/509006m_sp_7_st_anm.anm
-487F0107328CA2F3|
+487F0107328CA2F3|/ev/motion/en/en011101/509009m_sp_8_anm.anm
 F689915A5C041DF8|/ev/motion/en/en011101/509010m_sp_9_anm.anm
 6CF93999B23CD756|/ev/motion/en/en011101/509011m_sp_10_anm.anm
 0F5CE1D8E5D9690B|/ui/image/map04_1302.wilay
@@ -97105,7 +97105,7 @@ C632811F19E23FC9|/ev/motion/en/en050201/509004m_sp_3_ed_anm.anm
 C4E612EE0E9C0E49|/ev/motion/en/en050201/509006m_sp_5_anm.anm
 DD3B3992A90D7CBF|/ev/motion/pc/pc010000/xs33140100_pc010000f_sp138_anm.anm
 4F698008F536E821|/ev/motion/en/en050201/509007m_sp_6_anm.anm
-430E08278B020C70|
+430E08278B020C70|/ev/motion/en/en050201/509011m_sp_10_anm.anm
 9A51FDE2455FCE66|/ev/motion/en/en050201/509012m_sp_11_anm.anm
 C4B8530E90FCF4B2|/ev/motion/en/en060301/509002m_sp_3_anm.anm
 411D92DF3554E476|/ev/motion/en/en060301/509003m_sp_4_anm.anm
@@ -97483,8 +97483,8 @@ E04AC0788199EC0E|/ev/motion/oj/oj850027/xs32190100_oj850027_sp113_lp.anm
 3CF1D73108907F4C|/ev/motion/oj/ws025301r/509003m_sp_2_ed_anm.anm
 3EA08AF1BA5359B8|/ev/motion/oj/ws025301r/509004m_sp_3_anm.anm
 7BA7C668B347908F|/ev/motion/oj/ws121101r/509000m_sp_1_anm.anm
-76C7666DB25851A1|
-BAA5E16738EC2BF3|
+76C7666DB25851A1|/ev/motion/oj/ws121101r/509001m_sp_2_st_anm.anm
+BAA5E16738EC2BF3|/ev/motion/oj/ws121101r/509002m_sp_2_lp_anm.anm
 2FDC6A183592F1C2|/ui/image/map02_0211.wilay
 B129EE8CBD1721E4|/ev/motion/oj/ws121101r/509003m_sp_2_ed_anm.anm
 99FC8AD61C0E29A7|/ev/motion/oj/ws265101r/509002m_sp_2_lp_anm.anm
@@ -97548,8 +97548,8 @@ BB6904B4C5891CD5|/ev/motion/ptcs/qev086108_1/qev086108_1_c04_evr1_model_en090502
 4C72EDE395DA66B3|/ev/motion/ptcs/qev086108_1/qev086108_1_c05_evr1_model_en090502.anm
 EA61F36A7335DB00|/ev/motion/ptcs/qev086108_1/qev086108_1_c05_evr2_model_fc281020.anm
 0F2518077439AB22|/ev/motion/ptcs/qev086108_1/qev086108_1_c05_evr2_model_fc281020.eva
-CC77C2DFBF62CFA8|
-36427FAB31B490E3|
+CC77C2DFBF62CFA8|/ev/motion/ptcs/xs00010100/xs00010100_c03_cm_xs00010100_c03.eva
+36427FAB31B490E3|/ev/motion/ptcs/xs00010100/xs00010100_c03_evr_oj010006.eva
 E6E05E8898A814E5|
 94953148EF8BD03E|/ev/motion/ptcs/xs07060100_1/xs07060100_1_c02_cm_xs07060100_1_c02.eva
 982068BE2616A5A6|/ev/title/title3_c01_evr7_model_np002101.anm
@@ -97771,7 +97771,7 @@ FBA55431B62BB6CB|/script/jp/act_en010601_b_atk01.sb
 431F9C7D93249BC6|/ev/motion/ptcs/xs08110100_1/xs08110100_1_c12_evr8_model_pc010000.anm
 D5C85491E7391172|/ev/motion/ptcs/xs08110100_1/xs08110100_1_c12_evr9_oj400111.eva
 2FBC503F4DFA6922|/ui/image/minimap04_3327.wilay
-446E953B1D20346F|
+446E953B1D20346F|/ev/motion/ptcs/xs08110100_1/xs08110100_1_c12_evr_oj210004.eva
 C850351860414D05|/ev/motion/ptcs/xs08110100_1/xs08110100_1_c12_kee000_ev_xs08_110_05_pcefb.eva
 117077114FBB2F6A|/ev/motion/ptcs/xs08110100_1/xs08110100_1_c12_kee002_ev_xs08_110_05_pcefb.eva
 38D23EC3DF116CC7|/ev/motion/ptcs/xs09060100_1/xs09060100_1_c01a_cm_xs09060100_1_c01a.eva
@@ -98033,11 +98033,11 @@ E5FB7501B210DB1C|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c06b_evr2_we061301r.e
 515ABEB7530CAD21|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c07_evr3_model_pc010000.eva
 24B481D223E6EE7A|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c07_evr4_model_fc281010.anm
 2BD09A49C8E6D55D|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c07_evr5_model_fc281020.eva
-17CA3C84F32A34AF|
+17CA3C84F32A34AF|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c08_evr1_model_en013101.anm
 B44C6A69DD3C0AA6|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c08_kee004_ev_cmn_100_010_pcefb.eva
 A9D0EAC5849E83B1|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c09_cm_xs11020100_1_c09.eva
 643798D164C62696|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c09_evr1_model_en013101.anm
-95B9EB002F708E3C|
+95B9EB002F708E3C|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c09_evr1_model_en013101.eva
 7B076ED96A00EC7A|/ev/motion/ptcs/xs11020100_1/xs11020100_1_c09_kee000_ev_xs11_020_09_pcefb.eva
 BD53D36D0D240316|/ev/motion/ptcs/xs11080100_2/xs11080100_2_c01_evr1_model_en013101.anm
 CC293A1E0E1C34AA|/ev/motion/ptcs/xs11080100_2/xs11080100_2_c01_evr1_model_en013101.eva
@@ -98612,7 +98612,7 @@ FFD6FF7BA55A8AE3|/ev/title/title3_c01.ceh
 9D3AFD2DD173ED29|/ev/title/title3_c01_evr2_model_fc281040.anm
 AAC5A2D78D075DBC|/ev/title/title3_c01_evr3_model_fc181010.anm
 2FF8F252E7CEE280|/ev/title/title3_c01_evr4_model_fc181020.anm
-39B4D2EC724B3B91|
+39B4D2EC724B3B91|/ev/title/title3_c01_evr8_model_np009001.anm
 7E9BBDF1C1CAE162|/ev/title/title3_c01_evr9_model_pc010000.anm
 8B8718E431677C87|/ui/stream/cn/strm_tips_048_02.wilay
 5DC77077A598F26F|/ev/title/title3_c01_evr_model_fc281010.anm
