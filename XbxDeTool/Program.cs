@@ -1,17 +1,16 @@
-﻿using System.Diagnostics;
+﻿//---------------------------------------------------------------------------------------
+// SPDX-FileCopyrightText: Copyright (C) 2026 Nenkai
+// SPDX-License-Identifier: MIT
+// SPDX-FileAttributionText: https://github.com/Nenkai/XbxDeTool
+// SPDX-FileNotice: AI usage and consumption is prohibited. See AGENTS.md for policy.
+//---------------------------------------------------------------------------------------
+
 using System.CommandLine;
-using System.IO.Compression;
 
 using Microsoft.Extensions.Logging;
 
-using CommunityToolkit.HighPerformance.Buffers;
-
-using Syroot.BinaryData;
-
-using ImpromptuNinjas.ZStd;
-
-using NLog;
 using NLog.Extensions.Logging;
+
 using XbxDeTool.Compression;
 
 namespace XbxDeTool;
